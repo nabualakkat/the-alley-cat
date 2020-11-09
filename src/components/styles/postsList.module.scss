@@ -1,0 +1,33 @@
+@import '../../styles/variables.scss';
+
+.post{
+  background: white;
+  height: 400px;
+  width: 90%;
+  margin-left: 5%;
+  border-radius: 3%;
+  background-size: auto;
+  transform: scale(1);
+  opacity: .90;
+  transition: transform 0.5s, opacity 0.5s;
+  box-shadow: 0 2px 2px #e0e0e0;
+  div{
+    display: flex;
+    flex-direction: column;
+    height: inherit;
+    justify-content: flex-end;
+    align-items: center;
+    h2{
+      font-weight: 300;
+      margin-bottom: 1rem;
+      color: $off-white;
+      
+    }
+  } 
+
+}
+
+.post:hover{
+  transform: scale(0.98);
+  opacity: 1;
+}

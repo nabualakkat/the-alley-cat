@@ -1,0 +1,41 @@
+@import '../../styles/variables';
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  background: none;
+}
+
+.title{
+  color: $off-white;
+  font-size: 3rem;
+  text-decoration: none;
+}
+
+.nav-list {
+  margin-right: 1.5rem;
+  padding: 1rem 0 1rem;
+  display: flex;
+  list-style-type: none;
+}
+
+
+.nav-item {
+  color: $light-grey;
+  font-size: 1.1rem;
+  margin-right: 1.3rem;
+  text-decoration: none;
+}
+
+.nav-item:hover{
+  color: $dark-slate;
+}
+
+.active-nav-item{
+  color: $dark-grey;
+}

@@ -1,0 +1,26 @@
+@import '../../styles/variables';
+.container{
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+  background: $slate;
+  p{
+    padding-top: 5px;
+  }
+}
+
+.social-media{
+  display: flex;
+  list-style-type: none;
+}
+
+.icon{
+  height: 25px;
+  margin-right: 1rem;
+  transform: scale(1);
+  transition: transform 0.3s;
+}
+
+.icon:hover{
+  transform: scale(1.1)
+}

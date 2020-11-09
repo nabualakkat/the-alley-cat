@@ -1,0 +1,29 @@
+@import '../../styles/variables.scss';
+
+.container{
+  display: flex;
+  background: $off-white;
+  justify-content: space-evenly;
+}
+
+.button{
+  color: $slate;
+  background: none;
+  border: none;
+  margin: 0 3rem .5rem 0;
+  padding: .5rem 0 0 0;
+  font-size: 1.4rem;
+}
+
+.button:hover{
+  color: #227093;
+}
+
+.search-box{
+  color: $slate;
+  background: none;
+  width: 25%;
+  font-size: 1.4rem;
+  border: none;
+  border-bottom: 2px solid $slate;
+}
