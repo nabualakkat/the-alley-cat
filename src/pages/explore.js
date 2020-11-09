@@ -15,7 +15,7 @@ const ExplorePage = () => {
           </div>
         </div>
 
-        <div>
+        <div className={exploreStyles.filters}>
           <FilterBar/>
         </div>
         <div className={exploreStyles.postSection}>

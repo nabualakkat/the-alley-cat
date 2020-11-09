@@ -1,0 +1,49 @@
+@import '../styles/variables.scss';
+
+
+.container{
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container-header{
+  flex-grow: 1;
+  h1{
+    text-align: center;
+    margin-top: 5rem;
+    font-size: 500%;
+    color: #DFC2AC;
+    opacity: .7;
+  }
+}
+
+.hero{
+  background-image: -webkit-gradient(linear,left top, left bottom,from(rgba(0, 0, 0, 0.5)),to(rgba(0, 0, 0, 0.3))),url('../img/home-hero.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.nav{
+  display: flex;
+  margin: 1.4rem auto;
+  max-width: 750px;
+  text-align: center;
+  justify-content: space-evenly;
+}
+
+.nav-item{
+  font-size: 150%;
+  font-weight: 300;
+  color: #DFC2AC;
+  text-decoration: none;
+}
+
+.nav-item:hover{
+  color: #d37815;
+  border-bottom: 1px solid #d37815
+}

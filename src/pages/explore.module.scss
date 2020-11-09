@@ -28,13 +28,19 @@
   p {
     text-align: center;
     color: $off-white;
+    opacity: .8;
   }
   h2{
     margin-bottom: 1rem;
   }
 
 }
-
+.filters{
+  position: sticky;
+  top: 0;
+  z-index: 500;
+}
 .post-section{
+  padding: 1.5rem 0;
   background: $off-white;
 }

@@ -1,7 +1,7 @@
 @import '../../styles/variables';
 
 .header {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0%;
   width: 100%;
@@ -15,6 +15,7 @@
   color: $off-white;
   font-size: 3rem;
   text-decoration: none;
+  opacity: .8;
 }
 
 .nav-list {

@@ -1,5 +1,4 @@
 import React from 'react'
-import {Link} from 'gatsby'
 import footerStyles from './styles/footer.module.scss'
 import fb from '../img/icons/logo-facebook.svg'
 import ig from '../img/icons/logo-instagram.svg'
