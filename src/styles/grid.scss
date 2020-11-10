@@ -80,6 +80,13 @@
 	width: 32.26%; 
 }
 
+/* GO HALF WIDTH AT LESS THAN 800 PIXELS */
+
+@media only screen and (max-width: 800px) {
+	.span-1-of-3{
+		width:48.9%;
+	}
+}
 
 /*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
 

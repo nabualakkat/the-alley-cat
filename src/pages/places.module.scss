@@ -1,0 +1,12 @@
+@import '../styles/variables.scss';
+
+.container{
+  background-image: url('../img/places-background.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
