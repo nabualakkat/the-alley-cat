@@ -7,7 +7,7 @@ const Layout = (props) => {
   return(
     <div className={layoutStyles.container}>
       <div className={layoutStyles.content}>
-        <Header/>
+        <Header theme={props.theme}/>
         {props.children}
       </div>
       <Footer/>

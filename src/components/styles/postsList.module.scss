@@ -1,12 +1,12 @@
 @import '../../styles/variables.scss';
 
 .post{
-  background: white;
+  background: no-repeat center;
   height: 400px;
   width: 90%;
   margin-left: 5%;
   border-radius: 3%;
-  background-size: auto;
+  background-size: 50% 50%;
   transform: scale(1);
   opacity: .90;
   transition: transform 0.5s, opacity 0.5s;
@@ -20,8 +20,7 @@
     h2{
       font-weight: 300;
       margin-bottom: 1rem;
-      color: $off-white;
-      
+      color: $dark-theme-text;
     }
   } 
 

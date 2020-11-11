@@ -12,7 +12,7 @@
     text-align: center;
     margin-top: 5rem;
     font-size: 500%;
-    color: #DFC2AC;
+    color: $dark-theme-text;
     opacity: .7;
   }
 }
@@ -39,11 +39,11 @@
 .nav-item{
   font-size: 150%;
   font-weight: 300;
-  color: #DFC2AC;
+  color: $dark-theme-text;
   text-decoration: none;
 }
 
 .nav-item:hover{
-  color: #d37815;
-  border-bottom: 1px solid #d37815
+  color: $hover-color;
+  border-bottom: 1px solid $hover-color;
 }

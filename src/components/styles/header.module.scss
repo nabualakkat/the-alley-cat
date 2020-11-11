@@ -12,7 +12,7 @@
 }
 
 .title{
-  color: $off-white;
+  color: $dark-theme-text;
   font-size: 3rem;
   text-decoration: none;
   opacity: .8;
@@ -27,16 +27,16 @@
 
 
 .nav-item {
-  color: $light-grey;
+  color: $dark-theme-text;
   font-size: 1.1rem;
   margin-right: 1.3rem;
   text-decoration: none;
 }
 
 .nav-item:hover{
-  color: $dark-slate;
+  color: $hover-color;
 }
 
 .active-nav-item{
-  color: $dark-grey;
+  color: $light-theme-text;
 }

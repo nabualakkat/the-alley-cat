@@ -2,10 +2,12 @@ import React from "react"
 import {Link} from 'gatsby'
 import indexStyles from './index.module.scss'
 import Footer from '../components/Footer'
+import Head from '../components/Head'
 
 const HomePage = () => {
   return(
     <div className={indexStyles.container}>
+      <Head title="Home"/>
       <div className={indexStyles.hero}>
         <div className={indexStyles.containerHeader}>
           <h1>The Alley Cat</h1>

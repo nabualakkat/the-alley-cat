@@ -1,8 +1,15 @@
 import React from 'react'
 import {Link} from 'gatsby'
-import headerStyles from './styles/header.module.scss'
+import lightStyles from './styles/header.module.scss'
+import darkStyles from './styles/dark-header.module.scss'
 
-const Header = () => {
+const Header = ({theme}) => {
+  let headerStyles
+  if (theme==="light"){
+    headerStyles = lightStyles
+  }else if (theme==="dark"){
+    headerStyles = darkStyles
+  }
   return(
     <header className={headerStyles.header}>
       <h1 ><Link className={headerStyles.title} to="/" activeClassName={headerStyles.activeNavItem}>The Alley Cat</Link></h1>

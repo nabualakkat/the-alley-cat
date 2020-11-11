@@ -1,0 +1,18 @@
+@import '../../styles/variables';
+@import './header.module.scss';
+
+.title{
+  color: $light-theme-text;
+}
+
+.nav-item {
+  color: $light-theme-text;
+}
+
+.nav-item:hover{
+  color: $hover-color;
+}
+
+.active-nav-item{
+  color: $dark-theme-text;
+}

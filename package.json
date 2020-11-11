@@ -6,7 +6,7 @@
   "license": "0BSD",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "develop": "env-cmd -f .env gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
@@ -16,13 +16,19 @@
   "dependencies": {
     "@amcharts/amcharts4": "^4.10.10",
     "@amcharts/amcharts4-geodata": "^4.1.18",
+    "@contentful/rich-text-react-renderer": "^14.1.2",
+    "@contentful/rich-text-types": "^14.1.2",
     "gatsby": "^2.25.3",
+    "gatsby-plugin-react-helmet": "^3.3.14",
     "gatsby-plugin-sass": "^2.4.2",
+    "gatsby-source-contentful": "^3.1.3",
     "node-sass": "^4.14.1",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "react-helmet": "^6.1.0"
   },
   "devDependencies": {
+    "env-cmd": "^10.1.0",
     "prettier": "2.1.2"
   },
   "repository": {

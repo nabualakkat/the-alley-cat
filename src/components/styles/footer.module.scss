@@ -3,7 +3,9 @@
   display: flex;
   justify-content: space-between;
   padding: 1rem 0;
-  background: $slate;
+  background: #ADA996;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #c8c8c8, #b9b9b9, #d0d0d0, #8f8970);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #c8c8c8, #b9b9b9, #d0d0d0, #8f8970); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   opacity: .8;
 
   p{
