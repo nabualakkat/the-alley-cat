@@ -2,11 +2,10 @@ import React from 'react'
 import {Link, graphql, useStaticQuery} from 'gatsby'
 import postsListStyles from './styles/postsList.module.scss'
 import '../styles/grid.scss'
-import placeholderData from '../dummy-data/blog-data'
 
 
 
-const PostsList = () => {
+const PostsList = (props) => {
   const data = useStaticQuery(graphql`
     query {
       allContentfulBlogPost {
@@ -20,24 +19,44 @@ const PostsList = () => {
             }
             title
             slug
+            publishedDate
           }
         }
       }
     }
     `)
+    const onSort = (data) => {
+      const unsortedData = data.map((edge)=>edge.node)
+      if(props.sortBy==="date"){
+        const sortedData = unsortedData.sort((a,b) => {
+          return new Date(a.publishedDate) > new Date(b.publishedDate) ? -1 : 1;
+        })
+      return sortedData
+      
+    }else{
+      return unsortedData
+    }
+    }
+  const posts = data.allContentfulBlogPost.edges.filter((edge)=>{
+    return edge.node.title.toLowerCase().includes(props.searchText.toLowerCase())
+  })
+
   return(
-    <div className={`row ${postsListStyles.container}`}>
-      {data.allContentfulBlogPost.edges.map((edge)=>{
+    <div className={`row`}>
+
+      {onSort(posts).map((node)=>{
+        console.log(node)
+        console.log(posts)
         return(
-          <div className="col span-1-of-3">
-            <Link style={{textDecoration:"none"}}to={`/blog/${edge.node.slug}`}>
+          <div key={node.slug} className="col span-1-of-3">
+            <Link style={{textDecoration:"none"}}to={`/blog/${node.slug}`}>
               <div style={{
-                background:`url(${edge.node.thumbnailImage.file.url})`,
+                backgroundImage:`url(${node.thumbnailImage.file.url})`,
                 backgroundSize:"cover",
                 backgroundPosition:"center"                
                 }} className={postsListStyles.post}>
                 <div>
-                  <h2>{edge.node.title}</h2>
+                  <h2>{node.title}</h2>
                 </div>
               </div>
             </Link>

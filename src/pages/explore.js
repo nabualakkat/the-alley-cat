@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {graphql, useStaticQuery, Link} from 'gatsby'
 import Layout from '../components/Layout'
 import exploreStyles from './explore.module.scss'
@@ -10,6 +10,7 @@ import Head from '../components/Head'
 
 
 const ExplorePage = () => {
+  
   const data = useStaticQuery(graphql`
     query{
       contentfulFeaturedPost {
@@ -27,6 +28,18 @@ const ExplorePage = () => {
       }
     }
   `)
+
+  const [searchText, setSearchText] = useState('')
+  const [sortBy, setSortBy] = useState('')
+
+  const setTextFilter = (searchInput) => {
+    setSearchText(searchInput)
+  }
+
+  const setSortFunction = (sort) => {
+    setSortBy(sort)
+  }
+
   return(
       <Layout theme={"light"}>
         <Head title="Explore"/>
@@ -45,10 +58,10 @@ const ExplorePage = () => {
           </div>
           </Link>
           <div className={exploreStyles.filters}>
-            <FilterBar/>
+            <FilterBar setTextFilter={setTextFilter} setSortFunction={setSortFunction}/>
           </div>
           <div className={exploreStyles.postSection}>
-            <PostsList/>
+            <PostsList searchText={searchText} sortBy={sortBy}/>
           </div>
         
       </Layout> 

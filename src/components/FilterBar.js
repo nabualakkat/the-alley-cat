@@ -1,13 +1,22 @@
 import React from 'react'
 import filterBarStyles from './styles/filterBar.module.scss'
 
-const FilterBar = () => {
+const FilterBar = (props) => {
+
   return(
     <div className={filterBarStyles.container}>
-      <input className={filterBarStyles.searchBox} placeholder="Search Blog"/>
+      <input
+      onChange={(e) => {props.setTextFilter(e.target.value)}}
+      className={filterBarStyles.searchBox} placeholder="Search Blog"
+      />
       <div className={filterBarStyles.containerButtons}>
-        <button className={filterBarStyles.button}>Latest Travels</button>
-        <button className={filterBarStyles.button}>My Favorites</button>
+        <button
+          className={filterBarStyles.button}
+          onClick={()=>{props.setSortFunction("date")}}
+          >Latest Travels</button>
+        <button
+        onClick={() => {props.setSortFunction("")}}
+        className={filterBarStyles.button}>My Favorites</button>
       </div>
     </div>
   )

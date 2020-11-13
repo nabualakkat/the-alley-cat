@@ -23,7 +23,7 @@ const FeatureBlog = (props) => {
       "embedded-asset-block": (node) => {
         const alt = node.data.target.fields.title['en-US']
         const url = node.data.target.fields.file['en-US'].url
-        return <img src={url} alt={alt}/>
+        return <div className={featureBlogStyles.imageContainer}><img src={url} alt={alt}/></div>
       },
       [BLOCKS.PARAGRAPH]: (node, children) => (
         <p className={featureBlogStyles.paragraph}>{children}</p>

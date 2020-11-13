@@ -4,16 +4,11 @@
 * {
   margin: 0;
 }
-
-
 .hero{
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-
 }
-
-
 .feature {
   margin: 0 auto;
   max-width: 750px;
@@ -22,13 +17,18 @@
   h2,
   p {
     text-align: center;
-    color: $off-white;
+    color: $dark-theme-text;
     opacity: .8;
   }
   h2{
     margin-bottom: 1rem;
+    font-size: 250%;
+    font-weight: 350;
   }
-
+  p{
+    font-size: 110%;
+    font-weight: 200;
+  }
 }
 .filters{
   position: sticky;
