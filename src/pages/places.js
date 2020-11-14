@@ -64,7 +64,7 @@ class WorldMap extends React.Component {
   }
   render() {
     return(
-      <div id="chartdiv" style={{ width: "100%", height: "81vh", marginTop: "5rem"}}></div>
+      <div id="chartdiv" style={{ width: "100%", height: "auto", marginTop: "5rem"}}></div>
     )
   }
 }
@@ -131,12 +131,14 @@ const PlacesPage = () => {
 
   return(
     
-    <div className={placesStyles.container}>
+    
     <Layout theme={"dark"}>
+      <div className={placesStyles.container}>
       <Head title="Places"/>
       <WorldMap countryCodes={visitedCountries} location={visitedLocations}/>
+      </div>
     </Layout>
-    </div>
+    
   )
 }
 

@@ -12,8 +12,8 @@
 }
 
 .title{
-  font-size: 250%;
-  font-weight: 400;
+  font-size: $title-font-size;
+  font-weight: $title-font-weight;
   color: $gradient-text-color;
 }
 
@@ -38,6 +38,6 @@
 .paragraph{
   width: 650px;
   margin: 2rem auto;
-  font-size: 125%;
+  font-size: $body-font-size;
   color: $gradient-text-color;
 }

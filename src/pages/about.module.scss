@@ -1,0 +1,67 @@
+@import "../styles//variables.scss";
+@import "../styles/grid.scss";
+
+
+
+.container{
+  background: #ADA996;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.body-container{
+  margin-top: 7rem;
+}
+
+.bio-container{
+  max-width: 650px;
+  margin: 0 auto;
+  h1{
+    font-size: $title-font-size;
+    font-weight: $title-font-weight;
+    color: $light-theme-text;
+  }
+  p{
+    font-size: $body-font-size;
+    margin: 1rem 0 auto 0;
+    line-height: 2rem;
+    color: $light-theme-text;
+  }
+}
+
+.value-container{
+  margin: 0 auto;
+  p{
+    font-size: $body-font-size;
+    margin: 0 auto 1rem auto;
+    line-height: 2rem;
+    color: $light-theme-text;
+  }
+}
+
+.image1,
+.image2,
+.image3,
+.profile{
+  width: 100%;
+  background-size: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+.profile{
+  height: 30rem;
+}
+
+.image1{
+  height: 30rem;
+}
+
+.image2{
+  height: 13rem;
+
+}
+
+.image3{
+  height: 17rem;
+  margin-top: 1px;
+}

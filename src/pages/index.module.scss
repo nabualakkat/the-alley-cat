@@ -18,11 +18,6 @@
 }
 
 .hero{
-  background-image: -webkit-gradient(linear,left top, left bottom,from(rgba(0, 0, 0, 0.5)),to(rgba(0, 0, 0, 0.3))),url('../img/home-hero.jpg');
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-  background-attachment: fixed;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
