@@ -13,10 +13,12 @@ const NotFound = () => {
       backgroundPosition:"center"
     }}>
     <Layout theme={"light"}>
-      <div className={notFoundStyles.container}>
-        <h1>404 - Page Not Found</h1>
-        <h2>Unfortunately, it's not the first time we've caught her sleeping on the job... </h2>
-        <Link className={notFoundStyles.link} to="/explore">Keep on Exploring</Link>
+      <div className={notFoundStyles.page}>
+        <div className={notFoundStyles.container}>
+          <h1>404 - Page Not Found</h1>
+          <h2>Unfortunately, it's not the first time we've caught her sleeping on the job... </h2>
+          <Link className={notFoundStyles.link} to="/explore">Keep on Exploring</Link>
+        </div>
       </div>
     </Layout>
     </div>

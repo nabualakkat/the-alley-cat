@@ -16,6 +16,9 @@
   font-size: 3rem;
   text-decoration: none;
   opacity: .8;
+  @media (max-width: $desktop-breakpoint){
+    font-size: 1.5rem;
+  }
 }
 
 .nav-list {
@@ -31,6 +34,9 @@
   font-size: 1.1rem;
   margin-right: 1.3rem;
   text-decoration: none;
+  @media (max-width: $desktop-breakpoint){
+    margin-right: .75rem;
+  }
 }
 
 .nav-item:hover{

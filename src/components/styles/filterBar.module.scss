@@ -9,6 +9,10 @@
   justify-content: space-evenly;
   padding: 0.5rem 0 .5rem 0;
   opacity: .95;
+  @media (max-width: $desktop-breakpoint){
+    justify-content: space-between;
+    
+  }
 }
 
 .button{
@@ -19,6 +23,10 @@
   padding: .5rem 0 0 0;
   font-size: 1.4rem;
   outline: none;
+  @media (max-width: $desktop-breakpoint){
+    font-size: 1rem;
+    margin: 0 1rem .25rem 0;
+  }
 }
 
 .button:hover{
@@ -34,4 +42,8 @@
   border: none;
   border-bottom: 2px solid $light-theme-text;
   outline: none;
+  @media (max-width: $desktop-breakpoint){
+    font-size: 1.2rem;
+    width: 30%;
+  }
 }
