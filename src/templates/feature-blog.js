@@ -10,6 +10,7 @@ export const query = graphql`
   query($slug: String!){
     contentfulFeaturedPost(slug: {eq: $slug}) {
       title
+      publishedDate(formatString: "MMM Do, YYYY")
       body {
         json
       }
@@ -36,6 +37,7 @@ const FeatureBlog = (props) => {
         <Head title={props.data.contentfulFeaturedPost.title}/>
         <div className={featureBlogStyles.titleContainer}>
           <h1 className={featureBlogStyles.title}>{props.data.contentfulFeaturedPost.title}</h1>
+          <p className={featureBlogStyles.date}>{props.data.contentfulFeaturedPost.publishedDate}</p>
         </div>
         <div>
           {documentToReactComponents(props.data.contentfulFeaturedPost.body.json, options)}

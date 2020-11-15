@@ -57,7 +57,7 @@ const AboutPage = () => {
           <div style={{
                 backgroundImage:`url(${data.contentfulAboutPage.profilePicture.file.url})`,
                 backgroundSize:"cover",
-                backgroundPosition:"center" 
+                backgroundPosition:"center"
               }} className={aboutStyles.profile}></div>
           </div>
           <div className="col span-5-of-8">
