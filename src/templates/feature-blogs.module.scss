@@ -7,7 +7,7 @@
 }
 
 .title-container{
-  width: 650px;
+  max-width: 650px;
   margin: 5rem auto 0 auto;
 }
 
@@ -15,6 +15,9 @@
   font-size: 250%;
   font-weight: 400;
   color: $gradient-text-color;
+  @media (max-width: $desktop-breakpoint){
+    font-size: 200%;
+  }
 }
 
 .date{
@@ -24,19 +27,25 @@
 
 
 .image-container{
-  width: 900px;
+  display: flex;
   margin: 0 auto;
+  justify-content: center;
   img{
-    width: 900px;
+    max-width: 70%;
     height: auto;
     margin: 0 auto;
+  }
+  @media (max-width: $desktop-breakpoint){
+    img{
+      max-width: 100%;
+    }
   }
 }
 
 
 
 .paragraph{
-  width: 650px;
+  max-width: 650px;
   margin: 2rem auto;
   font-size: 125%;
   color: $gradient-text-color;

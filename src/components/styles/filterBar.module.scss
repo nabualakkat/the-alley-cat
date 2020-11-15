@@ -23,6 +23,8 @@
   padding: .5rem 0 0 0;
   font-size: 1.4rem;
   outline: none;
+  transform: scale(1);
+  transition: transform 0.5s;
   @media (max-width: $desktop-breakpoint){
     font-size: 1rem;
     margin: 0 1rem .25rem 0;
@@ -30,8 +32,9 @@
 }
 
 .button:hover{
-  color: #6C6977;
-  border-bottom: 1px solid $hover-color;
+  transform: scale(.97);
+  cursor: pointer;
+  
 }
 
 .search-box{

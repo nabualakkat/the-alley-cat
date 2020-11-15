@@ -51,7 +51,7 @@ class WorldMap extends React.Component {
     circle.nonScaling = true
     imageSeries.tooltip.label.interactionsEnabled=true
     imageSeries.tooltip.keepTargetHover=true
-    circle.tooltipHTML = `<b>{title}</b><br><a href=http://localhost:8000/blog/{slug}>View Post</a>`
+    circle.tooltipHTML = `<b>{title}</b><br><a href={window.location.origin}/blog/{slug}>View Post</a>`
     imageSeriesTemplate.propertyFields.latitude="latitude"
     imageSeriesTemplate.propertyFields.longitude="longitude"
     imageSeries.data=this.props.location
@@ -133,6 +133,8 @@ const PlacesPage = () => {
     
     
     <Layout theme={"dark"}>
+      {console.log(`${window.location.protocol}//${window.location.hostname}:${window.location.port}/blog`)}
+      {console.log(window.location.origin)}
       <div className={placesStyles.container}>
       <Head title="Places"/>
       <WorldMap countryCodes={visitedCountries} location={visitedLocations}/>
