@@ -133,8 +133,6 @@ const PlacesPage = () => {
     
     
     <Layout theme={"dark"}>
-      {console.log(`${window.location.protocol}//${window.location.hostname}:${window.location.port}/blog`)}
-      {console.log(window.location.origin)}
       <div className={placesStyles.container}>
       <Head title="Places"/>
       <WorldMap countryCodes={visitedCountries} location={visitedLocations}/>
