@@ -1,36 +1,47 @@
 import React from 'react'
 import {graphql} from 'gatsby'
+import {renderRichText} from 'gatsby-source-contentful/rich-text'
+import * as propTypes from 'prop-types'
 import {BLOCKS} from '@contentful/rich-text-types'
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer'
+import Img from 'gatsby-image'
 import Layout from '../components/Layout'
 import Head from '../components/Head'
 import featureBlogStyles from './feature-blogs.module.scss'
 
 export const query = graphql`
-  query($slug: String!){
-    contentfulFeaturedPost(slug: {eq: $slug}) {
-      title
-      publishedDate(formatString: "MMM Do, YYYY")
-      body {
-        json
+query($slug:String!) {
+  contentfulFeaturedPost(slug: {eq: $slug}) {
+    contentful_id
+    title
+    slug
+    body {
+      raw
+      references {
+        ... on ContentfulAsset {
+          contentful_id
+          fixed(width: 1600) {
+            width
+            height
+            srcSet
+          }
+        }
       }
     }
   }
+}
 `
+const options = {
+  renderNode: {
+    [BLOCKS.EMBEDDED_ASSET]: node => <Img {...node.data.target}/>,
+    [BLOCKS.PARAGRAPH]: (node, children) => (
+      <p className={featureBlogStyles.paragraph}>{children}</p>
+    )
+  }
+};
 
 const FeatureBlog = (props) => {
-  const options = {
-    renderNode: {
-      "embedded-asset-block": (node) => {
-        const alt = node.data.target.fields.title['en-US']
-        const url = node.data.target.fields.file['en-US'].url
-        return <div className={featureBlogStyles.imageContainer}><img src={url} alt={alt}/></div>
-      },
-      [BLOCKS.PARAGRAPH]: (node, children) => (
-        <p className={featureBlogStyles.paragraph}>{children}</p>
-      )
-    }
-  };
+  const {body} = props.data.contentfulFeaturedPost
   return(
     <div className={featureBlogStyles.container}>
       <Layout theme={"dark"}>
@@ -40,12 +51,17 @@ const FeatureBlog = (props) => {
           <p className={featureBlogStyles.date}>{props.data.contentfulFeaturedPost.publishedDate}</p>
         </div>
         <div>
-          {documentToReactComponents(props.data.contentfulFeaturedPost.body.json, options)}
+          {body && renderRichText(body.raw, options)}
         </div>
       </Layout>
     </div>
   )
 }
+
+FeatureBlog.propTypes = {
+  data: propTypes.object.isRequired
+}
+
 
 export default FeatureBlog
 

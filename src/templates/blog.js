@@ -1,37 +1,56 @@
 import React from 'react'
 import {graphql} from 'gatsby'
+import {renderRichText} from 'gatsby-source-contentful/rich-text'
+import * as propTypes from 'prop-types'
 import {BLOCKS} from '@contentful/rich-text-types'
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer'
+import Img from 'gatsby-image'
 import Layout from '../components/Layout'
 import Head from '../components/Head'
 import blogStyles from './blog.module.scss'
 
 export const query = graphql`
-query($slug:String!){
+query($slug:String!) {
   contentfulBlogPost(slug: {eq: $slug}) {
+    contentful_id
     title
-    publishedDate(formatString: "MMM Do, YYYY")
+    slug
     body {
-      json
+      raw
+      references {
+        ... on ContentfulAsset {
+          contentful_id
+          __typename
+          fluid(maxWidth: 900){
+            base64
+            tracedSVG
+            aspectRatio
+            src
+            srcSet
+          }
+        }
+      }
     }
   }
 }
 `
+const options = {
+  renderNode: {
+    [BLOCKS.EMBEDDED_ASSET]: (node) => {
+      return(
+        <div className={blogStyles.imageContainer}>
+          <Img {...node.data.target}/>
+        </div>
+      )
+  },
+    [BLOCKS.PARAGRAPH]: (node, children) => (
+      <p className={blogStyles.paragraph}>{children}</p>
+    )
+  }
+};
+
 
 const Blog = (props) => {
-  const options = {
-    renderNode: {
-      "embedded-asset-block": (node) => {
-        const alt = node.data.target.fields.title['en-US']
-        const url = node.data.target.fields.file['en-US'].url
-        return <div className={blogStyles.imageContainer}><img alt={alt} src={url}/></div>
-      },
-      [BLOCKS.PARAGRAPH]: (node, children) => (
-        <p className={blogStyles.paragraph}>{children}</p>
-      )
-    }
-  };
-
   return(
     <div className={blogStyles.container}>
       <Layout theme={"dark"}>
@@ -41,11 +60,15 @@ const Blog = (props) => {
           <p className={blogStyles.date}>{props.data.contentfulBlogPost.publishedDate}</p>
         </div>
         <div>
-          {documentToReactComponents(props.data.contentfulBlogPost.body.json, options)}
+          {props.data.contentfulBlogPost.body && renderRichText(props.data.contentfulBlogPost.body, options)}
         </div>
       </Layout>
     </div>
   )
+}
+
+Blog.propTypes = {
+  data: propTypes.object.isRequired
 }
 
 export default Blog

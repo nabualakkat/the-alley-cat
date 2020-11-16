@@ -27,16 +27,11 @@
 
 
 .image-container{
-  display: flex;
-  margin: 0 auto;
-  img{
-    max-width: 70%;
-    margin: 0 auto;
-  }
+  max-width: 900px;
+  margin: 2rem auto;
+  
   @media (max-width: $desktop-breakpoint){
-    img{
-      max-width: 100%;
-    }
+    max-width: 100%;
   }
 }
 
@@ -44,7 +39,7 @@
 
 .paragraph{
   max-width: 650px;
-  margin: 2rem;
+  margin: 1rem auto;
   font-size: $body-font-size;
   color: $gradient-text-color;
 }
