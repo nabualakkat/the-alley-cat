@@ -52,13 +52,13 @@ const ExplorePage = () => {
         <Link style={{textDecoration:"none"}}to={`/blog/${data.contentfulFeaturedPost.slug}`}>
           <div className={exploreStyles.container}>
             <BackgroundImage  
-            Tag="section"
-            className={exploreStyles.hero}
-            fluid={imageData}>
-              <div className={exploreStyles.feature}>
-                <h2 className={exploreStyles.featureTitle}>{data.contentfulFeaturedPost.title}</h2>
-                <p>{data.contentfulFeaturedPost.excerpt.excerpt} </p>
-              </div>
+              Tag="section"
+              className={exploreStyles.hero}
+              fluid={imageData}>
+                <div className={exploreStyles.feature}>
+                  <h2 className={exploreStyles.featureTitle}>{data.contentfulFeaturedPost.title}</h2>
+                  <p>{data.contentfulFeaturedPost.excerpt.excerpt} </p>
+                </div>
             </BackgroundImage>
           </div>
           </Link>

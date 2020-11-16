@@ -45,8 +45,6 @@ const PostsList = (props) => {
     <div className={`row`}>
 
       {onSort(posts).map((node)=>{
-        console.log(node)
-        console.log(posts)
         return(
           <div key={node.slug} className="col span-1-of-3">
             <Link style={{textDecoration:"none"}}to={`/blog/${node.slug}`}>
