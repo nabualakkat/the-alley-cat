@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import {graphql, useStaticQuery, Link} from 'gatsby'
+import '../styles/index.scss'
 import Layout from '../components/Layout'
 import exploreStyles from './explore.module.scss'
 import FilterBar from '../components/FilterBar'

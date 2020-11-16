@@ -1,8 +1,10 @@
 import React from "react"
 import {Link, graphql, useStaticQuery} from 'gatsby'
+import '../styles/index.scss'
 import indexStyles from './index.module.scss'
 import Footer from '../components/Footer'
 import Head from '../components/Head'
+
 
 const HomePage = () => {
   const data = useStaticQuery(graphql`
