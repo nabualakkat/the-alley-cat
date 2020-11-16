@@ -15,10 +15,9 @@ const ExplorePage = () => {
     query{
       contentfulFeaturedPost {
         thumbnailImage {
-          fluid(maxWidth: 900) {
+          fluid {
             base64
             tracedSVG
-            aspectRatio
             src
             srcSet
           }
@@ -48,10 +47,9 @@ const ExplorePage = () => {
   return(
     <Layout theme={"light"}>
       <Head title="Explore"/>
-      <Link style={{textDecoration:"none"}}to={`/blog/${data.contentfulFeaturedPost.slug}`}>
         <div className={exploreStyles.heroWrapper}>
+          <Link style={{textDecoration:"none"}}to={`/blog/${data.contentfulFeaturedPost.slug}`}>
           <BackgroundImage  
-            Tag="section"
             className={exploreStyles.hero}
             fluid={imageData}>
               <div className={exploreStyles.feature}>
@@ -59,8 +57,9 @@ const ExplorePage = () => {
                 <p>{data.contentfulFeaturedPost.excerpt.excerpt} </p>
               </div>
           </BackgroundImage>
+          </Link>
         </div>
-        </Link>
+        
         <div className={exploreStyles.filters}>
           <FilterBar setTextFilter={setTextFilter} setSortFunction={setSortFunction}/>
         </div>
