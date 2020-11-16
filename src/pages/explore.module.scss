@@ -11,9 +11,14 @@
   height: 100vh;
 }
 .hero{
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  z-index: 0;
 }
 .feature {
   margin: 0 auto;

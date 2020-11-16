@@ -3,7 +3,6 @@ import {graphql} from 'gatsby'
 import {renderRichText} from 'gatsby-source-contentful/rich-text'
 import * as propTypes from 'prop-types'
 import {BLOCKS} from '@contentful/rich-text-types'
-import {documentToReactComponents} from '@contentful/rich-text-react-renderer'
 import Img from 'gatsby-image'
 import Layout from '../components/Layout'
 import Head from '../components/Head'
@@ -20,9 +19,12 @@ query($slug:String!) {
       references {
         ... on ContentfulAsset {
           contentful_id
-          fixed(width: 1600) {
-            width
-            height
+          __typename
+          fluid(maxWidth: 900){
+            base64
+            tracedSVG
+            aspectRatio
+            src
             srcSet
           }
         }
@@ -33,7 +35,13 @@ query($slug:String!) {
 `
 const options = {
   renderNode: {
-    [BLOCKS.EMBEDDED_ASSET]: node => <Img {...node.data.target}/>,
+    [BLOCKS.EMBEDDED_ASSET]: node =>{
+      return(
+        <div className={featureBlogStyles.imageContainer}>
+          <Img {...node.data.target}/>
+        </div>
+      )
+    },
     [BLOCKS.PARAGRAPH]: (node, children) => (
       <p className={featureBlogStyles.paragraph}>{children}</p>
     )
@@ -41,7 +49,6 @@ const options = {
 };
 
 const FeatureBlog = (props) => {
-  const {body} = props.data.contentfulFeaturedPost
   return(
     <div className={featureBlogStyles.container}>
       <Layout theme={"dark"}>
@@ -51,7 +58,7 @@ const FeatureBlog = (props) => {
           <p className={featureBlogStyles.date}>{props.data.contentfulFeaturedPost.publishedDate}</p>
         </div>
         <div>
-          {body && renderRichText(body.raw, options)}
+          {props.data.contentfulFeaturedPost.body && renderRichText(props.data.contentfulFeaturedPost.body, options)}
         </div>
       </Layout>
     </div>
