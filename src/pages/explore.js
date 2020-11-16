@@ -46,28 +46,28 @@ const ExplorePage = () => {
   const imageData = data.contentfulFeaturedPost.thumbnailImage.fluid
 
   return(
-      <Layout theme={"light"}>
-        <Head title="Explore"/>
-        <Link style={{textDecoration:"none"}}to={`/blog/${data.contentfulFeaturedPost.slug}`}>
-          <div className={exploreStyles.container}>
-            <BackgroundImage  
-              Tag="section"
-              className={exploreStyles.hero}
-              fluid={imageData}>
-                <div className={exploreStyles.feature}>
-                  <h2 className={exploreStyles.featureTitle}>{data.contentfulFeaturedPost.title}</h2>
-                  <p>{data.contentfulFeaturedPost.excerpt.excerpt} </p>
-                </div>
-            </BackgroundImage>
-          </div>
-          </Link>
-          <div className={exploreStyles.filters}>
-            <FilterBar setTextFilter={setTextFilter} setSortFunction={setSortFunction}/>
-          </div>
-          <div className={exploreStyles.postSection}>
-            <PostsList searchText={searchText} sortBy={sortBy}/>
-          </div>
-        
-      </Layout> 
-      )}
+    <Layout theme={"light"}>
+      <Head title="Explore"/>
+      <Link style={{textDecoration:"none"}}to={`/blog/${data.contentfulFeaturedPost.slug}`}>
+        <div className={exploreStyles.heroWrapper}>
+          <BackgroundImage  
+            Tag="section"
+            className={exploreStyles.hero}
+            fluid={imageData}>
+              <div className={exploreStyles.feature}>
+                <h2 className={exploreStyles.featureTitle}>{data.contentfulFeaturedPost.title}</h2>
+                <p>{data.contentfulFeaturedPost.excerpt.excerpt} </p>
+              </div>
+          </BackgroundImage>
+        </div>
+        </Link>
+        <div className={exploreStyles.filters}>
+          <FilterBar setTextFilter={setTextFilter} setSortFunction={setSortFunction}/>
+        </div>
+        <div className={exploreStyles.postSection}>
+          <PostsList searchText={searchText} sortBy={sortBy}/>
+        </div>
+      
+    </Layout>
+  )}
 export default ExplorePage
