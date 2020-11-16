@@ -29,7 +29,6 @@
 .image-container{
   display: flex;
   margin: 0 auto;
-  justify-content: center;
   img{
     max-width: 70%;
     margin: 0 auto;
@@ -45,7 +44,7 @@
 
 .paragraph{
   max-width: 650px;
-  margin: 2rem auto;
+  margin: 2rem;
   font-size: $body-font-size;
   color: $gradient-text-color;
 }

@@ -19,7 +19,7 @@ const Footer = () => {
   
   `)
   return(
-    <div className={footerStyles.container}>
+    <footer className={footerStyles.container}>
       <p>Copyright 2020</p>
       <nav>
         <ol className={footerStyles.socialMedia}>
@@ -37,7 +37,7 @@ const Footer = () => {
           </li>
         </ol>
       </nav>
-    </div>
+    </footer>
   )
 }
 
