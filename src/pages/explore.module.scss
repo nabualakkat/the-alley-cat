@@ -6,16 +6,13 @@
 }
 
 .container{
-  width: auto;
   height: 100vh;
-  height: calc(var(--vh, 1vh) * 100);
 }
 .hero{
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   height: 100%;
-  height: calc(var(--vh, 1vh) * 100);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
