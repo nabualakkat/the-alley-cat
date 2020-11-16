@@ -19,6 +19,9 @@
   flex-direction: column;
   justify-content: flex-end;
   z-index: 0;
+  @media (max-width: $desktop-breakpoint){
+    background-attachment: scroll;
+  }
 }
 .feature {
   margin: 0 auto;
