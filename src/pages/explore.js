@@ -16,10 +16,7 @@ const ExplorePage = () => {
       contentfulFeaturedPost {
         thumbnailImage {
           fluid(quality: 90) {
-            base64
-            tracedSVG
-            src
-            srcSet
+            ...GatsbyContentfulFluid_withWebp
           }
         }
         title

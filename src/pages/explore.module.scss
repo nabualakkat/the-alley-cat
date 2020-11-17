@@ -9,15 +9,22 @@
   height: 100vh;
 
 }
-.hero{
+.hero,
+.hero::before,
+.hero::after{
   background-position: center center;
   background-attachment: fixed;
   display: flex;
   height: 100%;
-  object-fit: cover;
+  background-size: cover;
+  background-size: -webkit-;
   flex-direction: column;
   justify-content: flex-end;
   z-index: 0;
+  @media (max-width: $desktop-breakpoint){
+    background-attachment: scroll;
+  }
+
 }
 .feature {
   margin: 0 auto;
