@@ -7,7 +7,9 @@
 
 .hero-wrapper{
   height: 100vh;
-  
+  @media (max-width: $desktop-breakpoint){
+    height: 896pt;
+  } 
 }
 .hero{
   background-position: center;

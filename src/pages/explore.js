@@ -49,7 +49,6 @@ const ExplorePage = () => {
       <Head title="Explore"/>
         <div className={exploreStyles.heroWrapper}>
           <Link style={{textDecoration:"none"}}to={`/blog/${data.contentfulFeaturedPost.slug}`}>
-
           <BackgroundImage  
             className={exploreStyles.hero}
             fluid={imageData}>
@@ -66,8 +65,7 @@ const ExplorePage = () => {
         </div>
         <div className={exploreStyles.postSection}>
           <PostsList searchText={searchText} sortBy={sortBy}/>
-        </div>
-      
+        </div>      
     </Layout>
   )}
 export default ExplorePage
