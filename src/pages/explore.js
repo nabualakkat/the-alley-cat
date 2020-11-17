@@ -15,7 +15,7 @@ const ExplorePage = () => {
     query{
       contentfulFeaturedPost {
         thumbnailImage {
-          fluid {
+          fluid(quality: 90) {
             base64
             tracedSVG
             src
@@ -49,6 +49,7 @@ const ExplorePage = () => {
       <Head title="Explore"/>
         <div className={exploreStyles.heroWrapper}>
           <Link style={{textDecoration:"none"}}to={`/blog/${data.contentfulFeaturedPost.slug}`}>
+
           <BackgroundImage  
             className={exploreStyles.hero}
             fluid={imageData}>
